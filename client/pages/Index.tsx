@@ -2,15 +2,16 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Smartphone, 
-  Globe, 
-  Layers, 
-  Database, 
-  Shield, 
-  Zap, 
-  Cloud, 
-  Code, 
+import { useState } from "react";
+import {
+  Smartphone,
+  Globe,
+  Layers,
+  Database,
+  Shield,
+  Zap,
+  Cloud,
+  Code,
   Palette,
   Cpu,
   Lock,
@@ -20,10 +21,13 @@ import {
   CheckCircle,
   XCircle,
   ArrowRight,
-  ExternalLink
+  ExternalLink,
+  Copy,
+  Check
 } from "lucide-react";
 
 export default function Index() {
+  const [copied, setCopied] = useState(false);
   const appTypes = [
     { icon: Globe, name: "Web Apps", desc: "React, Vue, Angular SPAs" },
     { icon: Smartphone, name: "Mobile Apps", desc: "Progressive Web Apps (PWA)" },
