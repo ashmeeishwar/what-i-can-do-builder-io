@@ -65,6 +65,66 @@ export default function Index() {
     { name: "Export Code", desc: "Download as ZIP for custom deployment" }
   ];
 
+  const bestPromptStructure = `Build me a [APP TYPE] that [PRIMARY PURPOSE/GOAL].
+
+Key Features:
+• [Feature 1] - [brief description]
+• [Feature 2] - [brief description]
+• [Feature 3] - [brief description]
+
+Target Users: [Who will use this app]
+Use Cases: [How they'll use it]
+
+Design Style: [modern/minimal/colorful/professional/etc.]
+Brand: [company name or style preferences]
+
+Technical Requirements:
+• [Any specific APIs or integrations needed]
+• [Authentication requirements]
+• [Database needs]
+• [Performance requirements]
+
+Examples for Reference: [Similar apps or websites]
+
+Additional Notes: [Any other important details]
+
+---
+
+EXAMPLE:
+Build me a task management app that helps remote teams stay organized and productive.
+
+Key Features:
+• Task creation and assignment with due dates
+• Real-time collaboration and comments
+• Progress tracking with visual dashboards
+• File attachments and integrations
+
+Target Users: Remote teams of 5-50 people
+Use Cases: Daily task management, project planning, team communication
+
+Design Style: Clean and modern with a focus on productivity
+Brand: Professional but friendly, using blue and green accent colors
+
+Technical Requirements:
+• Real-time updates (WebSocket)
+• User authentication and team management
+• Integration with Slack and Google Drive
+• Mobile-responsive design
+
+Examples for Reference: Notion, Asana, but simpler and faster
+
+Additional Notes: Focus on speed and simplicity over advanced features`;
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(bestPromptStructure);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Hero Section */}
