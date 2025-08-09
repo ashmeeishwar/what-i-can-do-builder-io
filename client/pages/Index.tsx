@@ -1,6 +1,12 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import {
@@ -23,46 +29,89 @@ import {
   ArrowRight,
   ExternalLink,
   Copy,
-  Check
+  Check,
 } from "lucide-react";
 
 export default function Index() {
   const [copied, setCopied] = useState(false);
   const appTypes = [
     { icon: Globe, name: "Web Apps", desc: "React, Vue, Angular SPAs" },
-    { icon: Smartphone, name: "Mobile Apps", desc: "Progressive Web Apps (PWA)" },
+    {
+      icon: Smartphone,
+      name: "Mobile Apps",
+      desc: "Progressive Web Apps (PWA)",
+    },
     { icon: Layers, name: "Full-Stack", desc: "Frontend + Backend + API" },
-    { icon: Code, name: "Static Sites", desc: "Landing pages, blogs, docs" }
+    { icon: Code, name: "Static Sites", desc: "Landing pages, blogs, docs" },
   ];
 
   const techStack = [
-    { category: "Frontend", items: ["React 18", "TypeScript", "Vite", "Tailwind CSS"] },
-    { category: "Backend", items: ["Express.js", "Node.js", "TypeScript", "Zod validation"] },
-    { category: "UI Library", items: ["Radix UI", "shadcn/ui", "Lucide Icons", "Framer Motion"] },
-    { category: "Database", items: ["Supabase", "Neon", "Prisma", "MongoDB"] }
+    {
+      category: "Frontend",
+      items: ["React 18", "TypeScript", "Vite", "Tailwind CSS"],
+    },
+    {
+      category: "Backend",
+      items: ["Express.js", "Node.js", "TypeScript", "Zod validation"],
+    },
+    {
+      category: "UI Library",
+      items: ["Radix UI", "shadcn/ui", "Lucide Icons", "Framer Motion"],
+    },
+    { category: "Database", items: ["Supabase", "Neon", "Prisma", "MongoDB"] },
   ];
 
   const capabilities = [
-    { icon: Bot, name: "AI Features", available: true, desc: "Integrate OpenAI, Claude, custom models" },
-    { icon: Database, name: "API Integration", available: true, desc: "REST, GraphQL, webhooks, real-time" },
-    { icon: Wifi, name: "Offline Mode", available: true, desc: "Service workers, caching, sync" },
-    { icon: Lock, name: "Encryption", available: true, desc: "Auth, JWT, secure storage" },
-    { icon: Cloud, name: "Real-time", available: true, desc: "WebSockets, live updates" },
-    { icon: Rocket, name: "Performance", available: true, desc: "Code splitting, lazy loading" }
+    {
+      icon: Bot,
+      name: "AI Features",
+      available: true,
+      desc: "Integrate OpenAI, Claude, custom models",
+    },
+    {
+      icon: Database,
+      name: "API Integration",
+      available: true,
+      desc: "REST, GraphQL, webhooks, real-time",
+    },
+    {
+      icon: Wifi,
+      name: "Offline Mode",
+      available: true,
+      desc: "Service workers, caching, sync",
+    },
+    {
+      icon: Lock,
+      name: "Encryption",
+      available: true,
+      desc: "Auth, JWT, secure storage",
+    },
+    {
+      icon: Cloud,
+      name: "Real-time",
+      available: true,
+      desc: "WebSockets, live updates",
+    },
+    {
+      icon: Rocket,
+      name: "Performance",
+      available: true,
+      desc: "Code splitting, lazy loading",
+    },
   ];
 
   const limitations = [
     "Cannot build native mobile apps (iOS/Android) - only PWAs",
     "No direct database hosting - requires external providers",
     "Limited to web technologies (no desktop frameworks)",
-    "Cannot access device-specific APIs beyond web standards"
+    "Cannot access device-specific APIs beyond web standards",
   ];
 
   const deploymentOptions = [
     { name: "Netlify", desc: "Static sites & serverless functions" },
     { name: "Vercel", desc: "Full-stack React applications" },
     { name: "Builder.io", desc: "Visual CMS & headless deployment" },
-    { name: "Export Code", desc: "Download as ZIP for custom deployment" }
+    { name: "Export Code", desc: "Download as ZIP for custom deployment" },
   ];
 
   const bestPromptStructure = `Build me a [APP TYPE] that [PRIMARY PURPOSE/GOAL].
@@ -121,7 +170,7 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy text: ', err);
+      console.error("Failed to copy text: ", err);
     }
   };
 
@@ -148,7 +197,9 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
             )}
           </Button>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Perfect Prompt Structure for Best Results</h2>
+            <h2 className="text-2xl font-bold mb-6">
+              Perfect Prompt Structure for Best Results
+            </h2>
             <Card className="bg-white/10 backdrop-blur border-white/20 text-left">
               <CardContent className="p-8">
                 <pre className="text-white/90 text-sm leading-relaxed whitespace-pre-wrap font-mono">
@@ -171,17 +222,22 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
             My Capabilities & Tech Stack
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            I'm an AI assistant specialized in building modern web applications. 
+            I'm an AI assistant specialized in building modern web applications.
             Here's everything you need to know to get the best results.
           </p>
         </div>
 
         {/* App Types */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">What I Can Build</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+            What I Can Build
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {appTypes.map((type, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow border-0 bg-white/80 backdrop-blur">
+              <Card
+                key={index}
+                className="text-center hover:shadow-lg transition-shadow border-0 bg-white/80 backdrop-blur"
+              >
                 <CardHeader>
                   <type.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                   <CardTitle className="text-lg">{type.name}</CardTitle>
@@ -194,17 +250,25 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
 
         {/* Tech Stack */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Default Tech Stack</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+            Default Tech Stack
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {techStack.map((stack, index) => (
               <Card key={index} className="border-0 bg-white/80 backdrop-blur">
                 <CardHeader>
-                  <CardTitle className="text-lg text-blue-700">{stack.category}</CardTitle>
+                  <CardTitle className="text-lg text-blue-700">
+                    {stack.category}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {stack.items.map((item, itemIndex) => (
-                      <Badge key={itemIndex} variant="secondary" className="text-xs">
+                      <Badge
+                        key={itemIndex}
+                        variant="secondary"
+                        className="text-xs"
+                      >
                         {item}
                       </Badge>
                     ))}
@@ -217,7 +281,9 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
 
         {/* Capabilities */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Advanced Capabilities</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+            Advanced Capabilities
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {capabilities.map((capability, index) => (
               <Card key={index} className="border-0 bg-white/80 backdrop-blur">
@@ -250,7 +316,9 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
             <CardContent>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="font-semibold text-lg mb-4 text-blue-700">Include in Your Prompt:</h4>
+                  <h4 className="font-semibold text-lg mb-4 text-blue-700">
+                    Include in Your Prompt:
+                  </h4>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -275,7 +343,9 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg mb-4 text-purple-700">Development Approach:</h4>
+                  <h4 className="font-semibold text-lg mb-4 text-purple-700">
+                    Development Approach:
+                  </h4>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
@@ -302,7 +372,9 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
 
         {/* Limitations */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Current Limitations</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+            Current Limitations
+          </h2>
           <Card className="border-0 bg-orange-50">
             <CardContent className="pt-6">
               <ul className="space-y-3">
@@ -319,10 +391,15 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
 
         {/* Deployment */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Deployment & Export Options</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+            Deployment & Export Options
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {deploymentOptions.map((option, index) => (
-              <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="text-center border-0 bg-white/80 backdrop-blur hover:shadow-lg transition-shadow"
+              >
                 <CardHeader>
                   <Cloud className="w-10 h-10 text-blue-600 mx-auto mb-2" />
                   <CardTitle className="text-lg">{option.name}</CardTitle>
@@ -337,16 +414,23 @@ Additional Notes: Focus on speed and simplicity over advanced features`;
         <section className="text-center">
           <Card className="border-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
             <CardContent className="py-12">
-              <h2 className="text-3xl font-bold mb-4">Ready to Build Your App?</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Ready to Build Your App?
+              </h2>
               <p className="text-xl mb-8 opacity-90">
-                Just describe what you want to build, and I'll create it step by step!
+                Just describe what you want to build, and I'll create it step by
+                step!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="text-blue-600">
                   <ExternalLink className="w-5 h-5 mr-2" />
                   View Documentation
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-600"
+                >
                   Start Building
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
