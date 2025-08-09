@@ -5,6 +5,7 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/builder-io-what-can-builder-do/' : '/',
   server: {
     host: "::",
     port: 8080,
